@@ -1,9 +1,24 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { UsersModule } from './users/users.module';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { EducationModule } from './education/education.module';
+import { ConfigModule } from '@nestjs/config';
+import { AuthModule } from './components/auth/auth.module';
+
 
 @Module({
-  imports: [],
+  imports: [
+    // เพิ่มไว้สำหรับการอ่าน config ผ่าน .env
+    ConfigModule.forRoot({
+      isGlobal: true,
+      envFilePath: '.env',
+    }),
+    UsersModule,
+    EducationModule,
+    AuthModule
+  ],
   controllers: [AppController],
   providers: [AppService],
 })

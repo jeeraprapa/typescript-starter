@@ -25,8 +25,10 @@ export class AuthService {
                 id: user.user.id, 
                 email: user.user.email, 
                 name: user.user.name, 
-                created_at: user.user.createdAt
-            }
+                created_at: user.user.createdAt,
+                role: user.user.role
+            },
+            role: user.user.role
         };
         // console.log({payload});
         return {

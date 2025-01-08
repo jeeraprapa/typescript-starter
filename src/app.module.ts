@@ -6,6 +6,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { EducationModule } from './education/education.module';
 import { ConfigModule } from '@nestjs/config';
 import { AuthModule } from './components/auth/auth.module';
+import { CaslModule } from './casl/casl.module';
 
 
 @Module({
@@ -17,7 +18,8 @@ import { AuthModule } from './components/auth/auth.module';
     }),
     UsersModule,
     EducationModule,
-    AuthModule
+    AuthModule,
+    CaslModule
   ],
   controllers: [AppController],
   providers: [AppService],
